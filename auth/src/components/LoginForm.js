@@ -15,7 +15,8 @@ class LoginForm extends Component {
       .catch(() => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(this.onLoginSuccess.bind(this))
-        .catch(this.onLoginFail.bind(this));
+        .catch(this.onLoginFail.bind(this))
+      });
   }
 
   onLoginSuccess() {
@@ -28,7 +29,7 @@ class LoginForm extends Component {
   }
 
   onLoginFail() {
-    this.setState({ "Authentication Failed!", loading: false})
+    this.setState({ error: "Authentication Failed!", loading: false})
   }
 
   renderButton() {
@@ -51,7 +52,7 @@ class LoginForm extends Component {
           <Input
           placeholder = "user@gmail.com"
           label="Email"
-          vale={ this.state.email }
+          value={ this.state.email }
           onChangeText={email => this.setState({ email })}
           />
         </CardSection>
@@ -60,7 +61,7 @@ class LoginForm extends Component {
           secureTextEntry
           placeholder = "*******"
           label="Password"
-          vale={ this.state.password }
+          value={ this.state.password }
           onChangeText={password => this.setState({ password })}
           />
         </CardSection>
