@@ -1,9 +1,8 @@
-export default (state, action) => {
-  console.log(action);
+export default (state = null, action) => {
   switch (action.type) {
     case 'selectLibrary':
       return action.payload;
     default:
-      return null;
+      return state;
   }
 };
