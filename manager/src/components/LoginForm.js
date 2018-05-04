@@ -38,6 +38,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <Card>
+        <Text style={{paddingTop: 45}} />
         <CardSection>
           <Input
             label="Email"
