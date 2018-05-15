@@ -5,6 +5,7 @@ class EmployeeList extends React.Component {
   render () {
     return(
       <View>
+        <Text style={{ paddingTop: 50 }} />
         <Text>EmployeeList </Text>
         <Text>EmployeeList </Text>
         <Text>EmployeeList </Text>
