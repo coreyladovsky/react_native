@@ -5,6 +5,7 @@ import { Card, CardSection, Button } from "./common";
 import { Text } from "react-native";
 import { connect } from 'react-redux';
 import { employeeUpdate, employeeSave } from '../actions';
+import Communications from 'react-native-communications';
 
 class EmployeeEdit extends React.Component {
   componentWillMount() {
@@ -18,6 +19,11 @@ class EmployeeEdit extends React.Component {
     this.props.employeeSave({name, phone, shift, uid: this.props.employee.uid });
   }
 
+  onTextPress() {
+    const { phone, shift } = this.props;
+    Communications.text(phone, `Your upcoming shift is on ${shift}`);
+  }
+
   render() {
     return (
       <Card>
@@ -28,6 +34,13 @@ class EmployeeEdit extends React.Component {
             Save Chages
           </Button>
         </CardSection>
+
+        <CardSection>
+          <Button onPress={this.onTextPress.bind(this)}>
+            Text Schedule
+          </Button>
+        </CardSection>
+
       </Card>
     );
   }
