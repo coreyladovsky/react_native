@@ -45,7 +45,7 @@ const styles = {
   },
   containerStyle: {
     backgroundColor: 'rgba(0, 0, 0, 0.75)',
-    position: 'relatvie',
+    position: 'relative',
     flex: 1,
     justifyContent: 'center'
   }
